@@ -28,4 +28,13 @@ public class ScoreboardListener implements Listener {
 
     }
 
+    @EventHandler
+    public void onPlayerRespawn(PlayerRespawnEvent event) {
+
+        Player player = event.getPlayer();
+        KoTHPlugin plugin = KoTHPlugin.getInstance();
+        if(plugin.getScoreboardHook() instanceof SternalBoardHook && plugin.getKothManager().getCurrectKoth() != null) SternalBoard.getInstance().getScoreboardManager().removeScoreboard(player);
+
+    }
+
 }
